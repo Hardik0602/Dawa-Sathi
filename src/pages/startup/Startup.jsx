@@ -5,7 +5,7 @@ const Startup = ({ navigation }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace('Welcome');
-        }, 1000); // 1 second
+        }, 3000); // 3 second
         return () => clearTimeout(timer);
     }, []);
     return (
