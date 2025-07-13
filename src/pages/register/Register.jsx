@@ -2,20 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
 import med from '../../../images/signup.png'
 import InputField from '../../componants/InputField';
-// import SignUpHook from '../../hooks/SignUpHook';
+import SignUpHook from '../../hooks/SignUpHook';
 const Register = ({ navigation }) => {
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("")
   const [disable, setDisable] = useState(true);
   const [verified, setVerified] = useState(false);
-  // const handleSignUp = SignUpHook();
-  // const onPress = () => {
-  //   handleSignUp(mobile, password, rePassword, setVerified)
-  // }
-  // useEffect(() => {
-  //   verified ? navigation.navigate('OTP') : null;
-  // }, [verified]);
+  const handleSignUp = SignUpHook();
   useEffect(() => {
     const allFilled =
       password.trim().length > 0 &&
@@ -23,6 +17,12 @@ const Register = ({ navigation }) => {
       mobile.trim().length > 0;
     setDisable(!allFilled);
   }, [password, rePassword, mobile]);
+  const onPress = () => {
+    handleSignUp(mobile, password, rePassword, setVerified)
+  };
+  useEffect(() => {
+    verified ? navigation.navigate('OTP') : null;
+  }, [verified]);
   return (
     <KeyboardAvoidingView className="flex-1 bg-black">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -59,7 +59,7 @@ const Register = ({ navigation }) => {
                 <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
-                  onPress={() => onPress}>
+                  onPress={() => onPress()}>
                   <Text className='text-white font-bold text-[20px]'>Sign Up</Text>
                 </TouchableOpacity>
                 <View className='flex-row mt-[8%]'>
