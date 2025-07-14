@@ -50,7 +50,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='StartUp' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
+      <Stack.Navigator initialRouteName='MainTab' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
         <Stack.Screen name='StartUp' component={StartUp} />
         <Stack.Screen name='Login' component={Login} />
         <Stack.Screen name='Forgetpass' component={Forgetpass} />

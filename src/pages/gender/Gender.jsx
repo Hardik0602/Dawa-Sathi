@@ -21,7 +21,7 @@ const Gender = ({ navigation }) => {
                                 <Text className='text-[#A531E9] font-bold text-[25px]'>Which one are You?</Text>
                             </View>
                             <View className='items-center h-[40%] w-full'>
-                                <View className='flex-row w-full' style={{ justifyContent: 'space-evenly' }}>
+                                <View className='flex-row w-full justify-center'>
                                     <View className='w-[40%]'>
                                         <TouchableOpacity
                                             className='bg-[#C470F5] p-[10%] items-center justify-center rounded-3xl'
@@ -33,6 +33,7 @@ const Gender = ({ navigation }) => {
                                             <Text className='text-white font-bold text-[20px] mt-[10%]'>Male</Text>
                                         </TouchableOpacity>
                                     </View>
+                                    <View className='w-[15%]'/>
                                     <View className='w-[40%]'>
                                         <TouchableOpacity
                                             className='bg-[#DB9DFFDB] p-[10%] items-center justify-center rounded-3xl'
