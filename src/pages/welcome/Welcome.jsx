@@ -15,8 +15,8 @@ const Welcome = ({ navigation }) => {
       <View className='items-center h-[20%]'>
         <Image
           source={doc}
-          resizeMethod='contain'
-          className='w-[80%] h-full' />
+          resizeMode='contain'
+          className='w-full h-full' />
       </View>
       <View className='items-center h-[7%]'>
         <TouchableOpacity className='bg-[#AB33ED] rounded-xl h-full w-[80%] justify-center' onPress={() => { isLoggedIn ? navigation.replace('MainTab') : navigation.replace('Login') }}>
