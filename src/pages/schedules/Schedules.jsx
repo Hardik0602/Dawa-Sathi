@@ -13,7 +13,7 @@ const Time = ({ photo, time, time_of_day, onPress, isVisible, expand, selectTime
     const am_pm = moment(time).format('A');
     return (
         <TouchableWithoutFeedback onPress={onPress}>
-            <View className={`bg-white ${expand ? 'h-[99%]' : 'h-[30%]'} mt-[3%] shadow-md shadow-black justify-center items-center rounded-xl`}>
+            <View className={`bg-white ${expand ? 'h-[96%]' : 'h-[30%]'} mt-[3%] shadow-md shadow-black justify-center items-center rounded-xl`}>
                 <View className={`flex-row p-[1%] ${expand ? 'h-[30%] mb-[10%]' : 'h-full'}`}>
                     <View className={`justify-center items-center h-full w-[30%]`}>
                         <Text className='text-[16px] font-bold text-[#A531E9]'>{time_of_day}</Text>
