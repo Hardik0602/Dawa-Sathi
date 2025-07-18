@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
 const Number = ({ number }) => (
   <View>
-    <Text className="text-[18px] font-bold text-[#727272]">We'll text you on {number}</Text>
+    <Text className='text-[18px] font-bold text-[#727272]'>We'll text you on {number}</Text>
   </View>
 )
 const OTPInput = ({ otp, setOtp }) => {
@@ -23,26 +23,26 @@ const OTPInput = ({ otp, setOtp }) => {
     return [0, 1, 2, 3].map((i) => {
       const filled = !!digits[i];
       return (
-        <View key={i} className="w-[60px] h-[60px] items-center justify-center">
+        <View key={i} className='w-[60px] h-[60px] items-center justify-center' style={{justifyContent:'space-evenly'}}>
           {filled ? (
-            <Text className="text-[36px] font-bold text-black">{digits[i]}</Text>
+            <Text className='text-[30px] font-bold text-black'>{digits[i]}</Text>
           ) : (
-            <View className="w-[27px] h-[27px] rounded-full bg-[#E2E1F3]" />
+            <View className='w-[30px] h-[30px] rounded-full bg-[#E2E1F3]' />
           )}
         </View>
       );
     });
   };
   return (
-    <View className="w-full items-center">
+    <View>
       <TouchableWithoutFeedback onPress={focusInput}>
-        <View className="flex-row justify-center mt-2">{renderDots()}</View>
+        <View className='flex-row'>{renderDots()}</View>
       </TouchableWithoutFeedback>
       <TextInput
         ref={inputRef}
         value={otp}
         onChangeText={handleChange}
-        keyboardType="number-pad"
+        keyboardType='number-pad'
         maxLength={4}
         style={{ position: 'absolute', opacity: 0 }}
         autoFocus
@@ -65,7 +65,7 @@ const OTP = ({ navigation }) => {
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}>
             <View className='items-center'>
-              <Text className='text-[30px] font-bold text-[#171D1B] mb-[5px]'>Verify your Number</Text>
+              <Text className='text-[30px] font-bold text-[#171D1B] mb-[1%]'>Verify your Number</Text>
               <Number number={'08******27'} />
             </View>
             <View className='items-center'>
@@ -73,7 +73,7 @@ const OTP = ({ navigation }) => {
                 otp={otp}
                 setOtp={setOtp} />
               <TouchableOpacity onPress={() => setOtp('')}>
-                <Text className="mt-[5%] text-[18px] text-[#9838CD]">Send me a new code</Text>
+                <Text className='mt-[5%] text-[18px] text-[#9838CD]'>Send me a new code</Text>
               </TouchableOpacity>
             </View>
             <View className='h-[8%] items-center'>

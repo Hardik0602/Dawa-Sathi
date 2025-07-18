@@ -106,7 +106,7 @@ const MainTab = () => (
           </View>
         ),
       }} />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Dummy"
       component={Dummy}
       options={{
@@ -134,7 +134,7 @@ const MainTab = () => (
               }} />
           </View>
         ),
-      }} />
+      }} /> */}
   </Tab.Navigator>
 );
 export default MainTab;
