@@ -4,9 +4,9 @@ import med from '../../../images/signup.png'
 import InputField from '../../componants/InputField';
 import SignUpHook from '../../hooks/SignUpHook';
 const Register = ({ navigation }) => {
-  const [mobile, setMobile] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("")
+  const [mobile, setMobile] = useState('');
+  const [password, setPassword] = useState('');
+  const [rePassword, setRePassword] = useState('')
   const [disable, setDisable] = useState(true);
   const [verified, setVerified] = useState(false);
   const handleSignUp = SignUpHook();
@@ -62,6 +62,12 @@ const Register = ({ navigation }) => {
                   onPress={() => onPress()}>
                   <Text className='text-white font-bold text-[20px]'>Sign Up</Text>
                 </TouchableOpacity>
+                {/* <TouchableOpacity
+                  className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
+                  disabled={disable}
+                  onPress={() => { navigation.navigate('OTP') }}>
+                  <Text className='text-white font-bold text-[20px]'>Sign Up</Text>
+                </TouchableOpacity> */}
                 <View className='flex-row mt-[8%]'>
                   <Text>Already have an account?</Text>
                   <TouchableOpacity onPress={() => { navigation.replace('Login') }}>

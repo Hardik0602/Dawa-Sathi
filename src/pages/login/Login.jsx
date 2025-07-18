@@ -2,13 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import log from '../../../images/login.png';
 import InputField from '../../componants/InputField';
+import LoginHook from '../../hooks/LoginHook';
 const Login = ({ navigation }) => {
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [disable, setDisable] = useState(true);
+  const [verified, setVerified] = useState(false);
+  const handleLogin = LoginHook();
   useEffect(() => {
     setDisable(!(mobile.trim() && password.trim()));
   }, [mobile, password]);
+  const onPress = () => {
+    handleLogin(mobile, password, setVerified)
+  };
+  useEffect(() => {
+    verified ? navigation.navigate('MainTab') : null;
+  }, [verified]);
   return (
     <KeyboardAvoidingView className="flex-1 bg-black">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -46,10 +55,16 @@ const Login = ({ navigation }) => {
                 </View>
               </View>
               <View className='items-center h-[25%]'>
-                <TouchableOpacity
+                {/* <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
                   onPress={() => { navigation.replace('MainTab') }}>
+                  <Text className='text-white font-bold text-[20px]'>Login</Text>
+                </TouchableOpacity> */}
+                <TouchableOpacity
+                  className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
+                  disabled={disable}
+                  onPress={() => onPress()}>
                   <Text className='text-white font-bold text-[20px]'>Login</Text>
                 </TouchableOpacity>
                 <View className='flex-row mt-[8%]'>
