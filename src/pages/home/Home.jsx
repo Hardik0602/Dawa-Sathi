@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import user from '../../../images/user.png'
@@ -7,19 +7,27 @@ import check_mark from '../../../images/check_mark.png'
 import fire_logo from '../../../images/fire_logo.png'
 import a from '../../../images/A.png'
 import e from '../../../images/E.png'
-const Hello = ({ name, picture }) => {
+const Hello = ({ name, picture, navigation }) => {
   return (
     <View className='flex-row'>
       <View className='flex-1 justify-center p-[1%]'>
         <Text className='text-white text-[26px] font-bold mb-[3%]'>Hello, {name}</Text>
-        <Text className='text-white text-[14px] font-bold'>let's make your taking pills easy..!</Text>
+        {/* <Text className='text-white text-[14px] font-bold'>let's make your taking pills easy..!</Text> */}
+        <ScrollView
+          contentContainerStyle={{ flexGrow: 1, paddingBottom: '5' }}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}>
+          <Text className='text-white text-[14px] font-bold'>let's make taking your pills easy..!</Text>
+        </ScrollView>
       </View>
       <View className='w-[5%]' />
       <View>
-        <TouchableOpacity className='items-center justify-center w-[70px] h-[70px]'>
+        <TouchableOpacity
+          className='items-center justify-center w-[70px] h-[70px]'
+          onPress={() => { navigation.navigate('Profile') }} >
           <View className='bg-white rounded-full w-full h-full'>
             <Image
-              source={`${picture}`}
+              source={picture}
               className='w-full h-full'
               resizeMode='contain'
             />
@@ -88,12 +96,12 @@ const Streak = ({ value }) => {
 const Days = ({ color, margin, day, marginText }) => {
   return (
     <View className={`items-center ${margin}`}>
-      <View className={`${color} h-[23px] w-[23px] rounded-full`} />
+      <View className={`${color} h-[20px] w-[20px] rounded-full`} />
       <Text className={`text-[#A0A0A0] text-[15px] ${marginText} font-bold`}>{day}</Text>
     </View>
   )
 };
-const Home = () => {
+const Home = ({ navigation }) => {
   const [weekDates, setWeekDates] = useState([]);
   const [monthLabel, setMonthLabel] = useState('');
   useEffect(() => {
@@ -114,7 +122,10 @@ const Home = () => {
       <View className='h-[86%] items-center justify-center'>
         <View className='w-[90%]'>
           <View className='my-[5%] h-[10%]'>
-            <Hello name={'User'} picture={user} />
+            <Hello
+              name={'User'}
+              picture={user}
+              navigation={navigation} />
           </View>
           <View className='bg-white rounded-3xl h-[17%] p-[1%] items-center justify-center mb-[5%]'>
             <Text className='text-[20px] font-bold text-[#9838CD] mb-[3%]'>{monthLabel}</Text>
@@ -139,7 +150,7 @@ const Home = () => {
               className='h-[100%] w-[100%] items-start justify-center rounded-3xl p-[5%]'>
               <Today value={35} />
               <Yesterday value={0} />
-              <Today_Progress progress={'w-[30%]'} />
+              <Today_Progress progress={'w-[35%]'} />
               <View className='h-[1%] w-[100%] bg-pink-400 my-[5%] rounded-full' />
               <Today_Medicine />
             </LinearGradient>

@@ -64,7 +64,13 @@ const Age = ({ navigation }) => {
                                 {/* <Text style={{marginLeft:10 ,fontSize: 16 }}>
                                     Selected Date: <Text style={{ fontWeight: 'bold' }}>{formatDate(date)}</Text>
                                 </Text> */}
-                                <View className='w-[55%] items-center bg-[#AB33ED] rounded-xl justify-center'>
+                                {/* <View className='w-[55%] items-center bg-[#AB33ED] rounded-xl justify-center'>
+                                    {date && (
+                                        // <Text className='text-white text-[15px] font-bold'>Selected Date: <Text className='text-[#7034A4]'>{formatDate(date)}</Text></Text>
+                                        <Text className='text-white font-bold text-[20px]'>{formatDate(date)}</Text>
+                                    )}
+                                </View> */}
+                                <View className={`w-[55%] items-center ${disable ? 'bg-violet-100' : 'bg-violet-400'} rounded-xl justify-center`}>
                                     {date && (
                                         // <Text className='text-white text-[15px] font-bold'>Selected Date: <Text className='text-[#7034A4]'>{formatDate(date)}</Text></Text>
                                         <Text className='text-white font-bold text-[20px]'>{formatDate(date)}</Text>
