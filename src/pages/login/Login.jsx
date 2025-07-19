@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
     verified ? navigation.navigate('MainTab') : null;
   }, [verified]);
   return (
-    <KeyboardAvoidingView className="flex-1 bg-black">
+    <KeyboardAvoidingView className='flex-1 bg-black'>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className='flex-1 bg-[#A531E9]'>
           <View className='h-[40%] items-center justify-center'>
@@ -55,18 +55,18 @@ const Login = ({ navigation }) => {
                 </View>
               </View>
               <View className='items-center h-[25%]'>
-                {/* <TouchableOpacity
+                <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
                   onPress={() => { navigation.replace('MainTab') }}>
                   <Text className='text-white font-bold text-[20px]'>Login</Text>
-                </TouchableOpacity> */}
-                <TouchableOpacity
+                </TouchableOpacity>
+                {/* <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
                   onPress={() => onPress()}>
                   <Text className='text-white font-bold text-[20px]'>Login</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <View className='flex-row mt-[8%]'>
                   <Text>Don't have an account?</Text>
                   <TouchableOpacity onPress={() => { navigation.replace('Register') }}>
