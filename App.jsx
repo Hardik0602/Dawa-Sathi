@@ -16,6 +16,7 @@ import MainTab from './src/navigation/MainTab';
 import Profile from './src/pages/profile/Profile';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // const App = () => {
 //   return (
@@ -49,24 +50,45 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 const App = () => {
+  // return (
+  //   <NavigationContainer>
+  //     <Stack.Navigator initialRouteName='Welcome' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
+  //       <Stack.Screen name='StartUp' component={StartUp} />
+  //       <Stack.Screen name='Login' component={Login} />
+  //       <Stack.Screen name='Forgetpass' component={Forgetpass} />
+  //       <Stack.Screen name='Register' component={Register} />
+  //       <Stack.Screen name='Name' component={Name} />
+  //       <Stack.Screen name='Email' component={Email} />
+  //       <Stack.Screen name='Welcome' component={Welcome} />
+  //       <Stack.Screen name='OTP' component={OTP} />
+  //       <Stack.Screen name='Gender' component={Gender} />
+  //       <Stack.Screen name='Location' component={Location} />
+  //       <Stack.Screen name='Age' component={Age} />
+  //       <Stack.Screen name='MainTab' component={MainTab} />
+  //       <Stack.Screen name='Profile' component={Profile} />
+  //     </Stack.Navigator>
+  //   </NavigationContainer>
+  // )
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Profile' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
-        <Stack.Screen name='StartUp' component={StartUp} />
-        <Stack.Screen name='Login' component={Login} />
-        <Stack.Screen name='Forgetpass' component={Forgetpass} />
-        <Stack.Screen name='Register' component={Register} />
-        <Stack.Screen name='Name' component={Name} />
-        <Stack.Screen name='Email' component={Email} />
-        <Stack.Screen name='Welcome' component={Welcome} />
-        <Stack.Screen name='OTP' component={OTP} />
-        <Stack.Screen name='Gender' component={Gender} />
-        <Stack.Screen name='Location' component={Location} />
-        <Stack.Screen name='Age' component={Age} />
-        <Stack.Screen name='MainTab' component={MainTab} />
-        <Stack.Screen name='Profile' component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='MainTab' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
+          <Stack.Screen name='StartUp' component={StartUp} />
+          <Stack.Screen name='Login' component={Login} />
+          <Stack.Screen name='Forgetpass' component={Forgetpass} />
+          <Stack.Screen name='Register' component={Register} />
+          <Stack.Screen name='Name' component={Name} />
+          <Stack.Screen name='Email' component={Email} />
+          <Stack.Screen name='Welcome' component={Welcome} />
+          <Stack.Screen name='OTP' component={OTP} />
+          <Stack.Screen name='Gender' component={Gender} />
+          <Stack.Screen name='Location' component={Location} />
+          <Stack.Screen name='Age' component={Age} />
+          <Stack.Screen name='MainTab' component={MainTab} />
+          <Stack.Screen name='Profile' component={Profile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
 export default App;
