@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { View, Image } from 'react-native';
 import logo from '../../../images/logo.png';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Startup = ({ navigation }) => {
+    const insets = useSafeAreaInsets();
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace('Welcome');
@@ -9,7 +11,7 @@ const Startup = ({ navigation }) => {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <View className=" flex-1 justify-center items-center bg-[#F5F6FA]">
+        <View className='flex-1' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
             <Image
                 source={logo}
                 resizeMode='contain'

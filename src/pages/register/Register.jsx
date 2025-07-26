@@ -3,7 +3,9 @@ import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoi
 import med from '../../../images/signup.png'
 import InputField from '../../componants/InputField';
 import SignUpHook from '../../hooks/SignUpHook';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Register = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [rePassword, setRePassword] = useState('')
@@ -21,10 +23,11 @@ const Register = ({ navigation }) => {
     handleSignUp(mobile, password, rePassword, setVerified)
   };
   useEffect(() => {
-    verified ? navigation.navigate('OTP') : null;
+    // verified ? navigation.navigate('OTP') : null;
+    verified ? navigation.navigate('OTP', { phone: mobile }) : null;
   }, [verified]);
   return (
-    <KeyboardAvoidingView className="flex-1 bg-black">
+    <KeyboardAvoidingView className="flex-1 bg-black" style={{ paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className='flex-1 bg-[#A531E9]'>
           <View className='h-[40%] items-center justify-center'>
@@ -56,18 +59,18 @@ const Register = ({ navigation }) => {
                   onChangeText={setRePassword} />
               </View>
               <View className='items-center h-[25%]'>
-                {/* <TouchableOpacity
+                <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
                   onPress={() => onPress()}>
                   <Text className='text-white font-bold text-[20px]'>Sign Up</Text>
-                </TouchableOpacity> */}
-                <TouchableOpacity
+                </TouchableOpacity>
+                {/* <TouchableOpacity
                   className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-full h-[50%]`}
                   disabled={disable}
-                  onPress={() => { navigation.navigate('OTP') }}>
+                  onPress={() => { navigation.navigate('OTP', { phone: mobile }) }}>
                   <Text className='text-white font-bold text-[20px]'>Sign Up</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <View className='flex-row mt-[8%]'>
                   <Text>Already have an account?</Text>
                   <TouchableOpacity onPress={() => { navigation.replace('Login') }}>

@@ -3,7 +3,9 @@ import { View, Text, Image, TouchableOpacity, Keyboard, KeyboardAvoidingView, To
 import log from '../../../images/login.png';
 import InputField from '../../componants/InputField';
 import LoginHook from '../../hooks/LoginHook';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Login = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
   const [mobile, setMobile] = useState('');
   const [password, setPassword] = useState('');
   const [disable, setDisable] = useState(true);
@@ -19,7 +21,7 @@ const Login = ({ navigation }) => {
     verified ? navigation.navigate('MainTab') : null;
   }, [verified]);
   return (
-    <KeyboardAvoidingView className='flex-1 bg-black'>
+    <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className='flex-1 bg-[#A531E9]'>
           <View className='h-[40%] items-center justify-center'>

@@ -3,7 +3,9 @@ import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoi
 import name_img from '../../../images/name.png'
 import InputField from '../../componants/InputField';
 import AuthProgressBar from '../../componants/AuthProgressBar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Name = ({ navigation }) => {
+    const insets = useSafeAreaInsets();
     const [name, setName] = useState('');
     const [disable, setDisable] = useState(true);
     useEffect(() => {
@@ -14,7 +16,7 @@ const Name = ({ navigation }) => {
         }
     }, [name]);
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black'>
+        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View className='flex-1 bg-[#F6F6F6]'>
                     <View className='h-[15%] justify-end items-center'>

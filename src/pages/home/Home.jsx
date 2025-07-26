@@ -7,6 +7,7 @@ import check_mark from '../../../images/check_mark.png'
 import fire_logo from '../../../images/fire_logo.png'
 import a from '../../../images/A.png'
 import e from '../../../images/E.png'
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Hello = ({ name, picture, navigation }) => {
   return (
     <View className='flex-row'>
@@ -102,6 +103,7 @@ const Days = ({ color, margin, day, marginText }) => {
   )
 };
 const Home = ({ navigation }) => {
+  const insets = useSafeAreaInsets();
   const [weekDates, setWeekDates] = useState([]);
   const [monthLabel, setMonthLabel] = useState('');
   useEffect(() => {
