@@ -4,6 +4,7 @@ import user from '../../../images/user.png'
 import deleteAccount from '../../../images/deleteAccount.png'
 import logout from '../../../images/logout.png'
 import InputField from '../../componants/InputField';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Picture = ({ picture }) => {
     return (
         <View className=' h-[120px] w-[120px] bg-[#E2E1F3] rounded-full items-center justify-center'>
@@ -15,6 +16,7 @@ const Picture = ({ picture }) => {
     )
 }
 const Profile = () => {
+    const insets = useSafeAreaInsets();
     const screenHeight = Dimensions.get('window').height;
     const topMarginPhoto = screenHeight * 0.3;
     const topMarginRest = screenHeight * 0.3 + 70;
@@ -23,7 +25,7 @@ const Profile = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black'>
+        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView
                     contentContainerStyle={{ flexGrow: 1 }}

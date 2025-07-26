@@ -3,9 +3,11 @@ import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoi
 import male from '../../../images/male_copy.png'
 import female from '../../../images/female_copy.png'
 import AuthProgressBar from '../../componants/AuthProgressBar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Gender = ({ navigation }) => {
+    const insets = useSafeAreaInsets();
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black'>
+        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View className='flex-1 bg-[#F6F6F6]'>
                     <View className='h-[15%] justify-end items-center'>

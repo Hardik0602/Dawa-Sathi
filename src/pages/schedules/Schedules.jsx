@@ -5,6 +5,7 @@ import morning from '../../../images/morning.png';
 import afternoon from '../../../images/afternoon.png';
 import evening from '../../../images/evening.png';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Time = ({ photo, time, time_of_day, onPress, isVisible, expand, selectTime }) => {
     if (!isVisible)
         return null;
@@ -49,6 +50,7 @@ const Time = ({ photo, time, time_of_day, onPress, isVisible, expand, selectTime
     );
 };
 const Schedules = () => {
+    const insets = useSafeAreaInsets();
     const [monthDates, setMonthDates] = useState([]);
     const [monthLabel, setMonthLabel] = useState('');
     const [activeTime, setActiveTime] = useState(null);

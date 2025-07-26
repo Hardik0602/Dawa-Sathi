@@ -4,7 +4,9 @@ import Geolocation from 'react-native-geolocation-service';
 import { check, request, PERMISSIONS, RESULTS, openSettings } from 'react-native-permissions';
 import location from '../../../images/location.png';
 import AuthProgressBar from '../../componants/AuthProgressBar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Location = ({ navigation }) => {
+    const insets = useSafeAreaInsets();
     const handleLocationAccess = async () => {
         try {
             // const permission = Platform.OS === 'android' ? PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION : PERMISSIONS.IOS.LOCATION_WHEN_IN_USE;
@@ -56,7 +58,7 @@ const Location = ({ navigation }) => {
         }
     };
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black'>
+        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View className='flex-1 bg-[#F6F6F6]'>
                     <View className='h-[15%] justify-end items-center'>

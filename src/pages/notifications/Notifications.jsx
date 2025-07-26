@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Notification = ({ title, message, title_color }) => {
     return (
         <View className='px-[3%] py-[3%] m-[5%] bg-white w-[90%] shadow-md shadow-black rounded-xl'>
@@ -9,6 +10,7 @@ const Notification = ({ title, message, title_color }) => {
     )
 }
 const Notifications = () => {
+    const insets = useSafeAreaInsets();
     return (
         <View className='flex-1 bg-white'>
             <View className='h-[86%]'>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
 import pass from '../../../images/forgetpass.png';
 import InputField from '../../componants/InputField';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Forgetpass = ({ navigation }) => {
   const [mobile, setMobile] = useState('');
   const [disable, setDisable] = useState(true);
@@ -12,8 +13,9 @@ const Forgetpass = ({ navigation }) => {
       setDisable(true);
     }
   }, [mobile]);
+  const insets = useSafeAreaInsets();
   return (
-    <KeyboardAvoidingView className='flex-1 bg-black'>
+    <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View className='flex-1 bg-[#A531E9]'>
           <View className='h-[40%] items-center justify-center'>
