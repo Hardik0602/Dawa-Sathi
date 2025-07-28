@@ -20,4 +20,8 @@ npx react-native bundle \
 -------- built using android studio by opening the "android" folder there or use the command below --------
 
 cd android
-./gradlew assembleRelease 
+./gradlew assembleRelease
+
+steps to start backend:
+navigate to "backend" folder in command prompt
+type "npm run dev" to start
