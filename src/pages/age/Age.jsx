@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import age from '../../../images/age.png';
 import AuthProgressBar from '../../componants/AuthProgressBar';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -25,9 +25,10 @@ const Age = ({ navigation }) => {
         });
     };
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <KeyboardAvoidingView className='flex-1 bg-black'>
+            <StatusBar barStyle={'dark-content'} />
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View className='flex-1 bg-[#F6F6F6]'>
+                <View className='flex-1 bg-[#F6F6F6]' style={{ paddingBottom: insets.bottom, paddingTop: insets.top }}>
                     <View className='h-[15%] justify-end items-center'>
                         <AuthProgressBar
                             progress={'w-5/5'} />

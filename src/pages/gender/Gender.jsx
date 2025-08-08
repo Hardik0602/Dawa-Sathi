@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import male from '../../../images/male_copy.png'
 import female from '../../../images/female_copy.png'
 import AuthProgressBar from '../../componants/AuthProgressBar';
@@ -7,9 +7,10 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Gender = ({ navigation }) => {
     const insets = useSafeAreaInsets();
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <KeyboardAvoidingView className='flex-1 bg-black'>
+            <StatusBar barStyle={'dark-content'} />
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View className='flex-1 bg-[#F6F6F6]'>
+                <View className='flex-1 bg-[#F6F6F6]' style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
                     <View className='h-[15%] justify-end items-center'>
                         <AuthProgressBar
                             progress={'w-3/5'} />
@@ -35,7 +36,7 @@ const Gender = ({ navigation }) => {
                                             <Text className='text-white font-bold text-[20px] mt-[10%]'>Male</Text>
                                         </TouchableOpacity>
                                     </View>
-                                    <View className='w-[15%]'/>
+                                    <View className='w-[15%]' />
                                     <View className='w-[40%]'>
                                         <TouchableOpacity
                                             className='bg-[#DB9DFFDB] p-[10%] items-center justify-center rounded-3xl'

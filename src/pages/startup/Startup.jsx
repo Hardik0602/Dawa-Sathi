@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, Image } from 'react-native';
+import { View, Image, StatusBar } from 'react-native';
 import logo from '../../../images/logo.png';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Startup = ({ navigation }) => {
@@ -11,11 +11,12 @@ const Startup = ({ navigation }) => {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <View className='flex-1' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <View className='flex-1 items-center justify-center'>
+            <StatusBar barStyle={'dark-content'} />
             <Image
                 source={logo}
                 resizeMode='contain'
-                className='h-full w-[80%]' />
+                className='h-[30%] aspect-square' />
         </View>
     );
 };

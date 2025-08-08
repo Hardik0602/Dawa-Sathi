@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Keyboard, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import name_img from '../../../images/name.png'
 import InputField from '../../componants/InputField';
 import AuthProgressBar from '../../componants/AuthProgressBar';
@@ -16,9 +16,10 @@ const Name = ({ navigation }) => {
         }
     }, [name]);
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <KeyboardAvoidingView className='flex-1 bg-black'>
+            <StatusBar barStyle={'dark-content'} />
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View className='flex-1 bg-[#F6F6F6]'>
+                <View className='flex-1 bg-[#F6F6F6]' style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
                     <View className='h-[15%] justify-end items-center'>
                         <AuthProgressBar
                             progress={'w-1/5'} />

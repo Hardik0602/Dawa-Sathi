@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableWithoutFeedback, TouchableOpacity, StatusBar } from 'react-native';
 import moment from 'moment';
 import morning from '../../../images/morning.png';
 import afternoon from '../../../images/afternoon.png';
@@ -99,11 +99,12 @@ const Schedules = () => {
     };
     return (
         <View className='flex-1 bg-white'>
-            <View className='h-[86%] items-center'>
+            <StatusBar barStyle={'light-content'} />
+            <View className='h-[86%] items-center' style={{ paddingTop: insets.top }}>
                 <View className='h-[40%] w-full items-center absolute'>
                     <View className='items-center justify-center bg-[#A531E9] w-[110%] h-full rounded-b-full' />
                 </View>
-                <View className='w-[80%] h-[94%] mt-[10%]'>
+                <View className='w-[80%] h-[94%]'>
                     <View className='mb-[5%]'>
                         <Text className='text-white text-[35px] font-bold text-center'>Schedules</Text>
                     </View>
@@ -128,8 +129,8 @@ const Schedules = () => {
                             ))}
                         </View>
                     </View>
-                    <View className='h-[47%]'>
-                        <Text className='text-[#9838CD] font-bold text-[16px] text-center'>Today's Schedules</Text>
+                    <View className='h-[47%] mt-[10%]'>
+                        <Text className='text-[#9838CD] font-bold text-[20px] text-center'>Today's Schedules</Text>
                         <View className='flex-1'>
                             <Time time_of_day={'Morning'} photo={morning} time={times.Morning} onPress={() => toggleTime('Morning')} expand={activeTime === 'Morning'} isVisible={activeTime === null || activeTime === 'Morning'} selectTime={() => { setTimeSlot('Morning'), setShowPicker(true) }} />
                             <Time time_of_day={'Afternoon'} photo={afternoon} time={times.Afternoon} onPress={() => toggleTime('Afternoon')} expand={activeTime === 'Afternoon'} isVisible={activeTime === null || activeTime === 'Afternoon'} selectTime={() => { setTimeSlot('Afternoon'), setShowPicker(true) }} />

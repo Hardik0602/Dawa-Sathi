@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, ScrollView, StatusBar } from 'react-native';
 import log from '../../../images/login.png';
 import InputField from '../../componants/InputField';
 import LoginHook from '../../hooks/LoginHook';
@@ -21,16 +21,17 @@ const Login = ({ navigation }) => {
     verified ? navigation.navigate('MainTab') : null;
   }, [verified]);
   return (
-    <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+    <KeyboardAvoidingView className='flex-1 bg-black'>
+      <StatusBar barStyle={'light-content'}/>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View className='flex-1 bg-[#A531E9]'>
+        <View className='flex-1 bg-[#A531E9]' style={{paddingTop:insets.top}}>
           <View className='h-[40%] items-center justify-center'>
             <Image
               source={log}
               resizeMode='contain'
               className='h-[80%] w-[60%]' />
           </View>
-          <View className='h-[60%] bg-white rounded-t-[10%] p-[5%]'>
+          <View className='h-[60%] bg-white rounded-t-[10%] p-[5%]' style={{paddingBottom:insets.bottom}}>
             <ScrollView
               contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-evenly' }}
               keyboardShouldPersistTaps="handled"
