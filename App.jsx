@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { View } from 'react-native';
+import React from "react";
 import Register from './src/pages/register/Register';
 import Login from './src/pages/login/Login';
 import Welcome from './src/pages/welcome/Welcome';
@@ -11,49 +10,17 @@ import Gender from './src/pages/gender/Gender';
 import Location from './src/pages/location/Location';
 import Age from './src/pages/age/Age';
 import StartUp from './src/pages/startup/Startup';
-import AllRoutes from './src/navigation/AllRoutes';
-import MainTab from './src/navigation/MainTab';
+import MainTab from './src/maintab/MainTab';
 import Profile from './src/pages/profile/Profile';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-// const App = () => {
-//   return (
-//     <View className="h-full">
-//       <AllRoutes />
-//       {/* <Register /> */}
-//       {/* <Login /> */}
-//       {/* <Welcome /> */}
-//       {/* <Forgetpass /> */}
-//       {/* <OTP /> */}
-//       {/* <Name /> */}
-//       {/* <Email /> */}
-//       {/* <Gender /> */}
-//       {/* <Location /> */}
-//       {/* <Age /> */}
-//       {/* <StartUp/> */}
-//     </View>
-//   )
-// }
-
-// const App = () => {
-//   const [showStartup, setShowStartup] = useState(true);
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setShowStartup(false);
-//     }, 3000);
-//     return () => clearTimeout(timer);
-//   }, []);
-//   return showStartup ? <StartUp /> : <AllRoutes />;
-// }
-
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='MainTab' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
+        <Stack.Navigator initialRouteName='StartUp' screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
           <Stack.Screen name='StartUp' component={StartUp} />
           <Stack.Screen name='Login' component={Login} />
           <Stack.Screen name='Forgetpass' component={Forgetpass} />
