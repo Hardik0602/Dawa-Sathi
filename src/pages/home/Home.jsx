@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import user from '../../../images/user.png'
@@ -120,7 +120,8 @@ const Home = ({ navigation }) => {
     setMonthLabel(startOfWeek.format('MMMM'));
   }, []);
   return (
-    <View className='flex-1 bg-[#A532E9]'>
+    <View className='flex-1 bg-[#A532E9]' style={{ paddingTop: insets.top }}>
+      <StatusBar barStyle={'light-content'} />
       <View className='h-[86%] items-center justify-center'>
         <View className='w-[90%]'>
           <View className='my-[5%] h-[10%]'>

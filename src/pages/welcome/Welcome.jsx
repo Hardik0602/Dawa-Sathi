@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StatusBar } from 'react-native';
 import doc from '../../../images/welcometo.png'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Welcome = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   const isLoggedIn = false; // replace with check for login
   return (
-    <View className="flex-1 bg-[#F6F6F6]" style={{ justifyContent: 'space-evenly', paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }}>
+    <View className="flex-1 bg-[#F6F6F6]" style={{ justifyContent: 'space-evenly', paddingTop: insets.top, paddingBottom: insets.bottom }}>
+      <StatusBar barStyle={'dark-content'} />
       <View className='items-center'>
         <Text className="text-[35px] font-bold text-black">Welcome to</Text>
         <Text className="text-[35px] font-bold text-[#AB33ED]">Dawa Sathi</Text>

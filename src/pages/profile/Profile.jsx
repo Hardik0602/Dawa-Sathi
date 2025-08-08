@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Dimensions, Image, ScrollView, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { View, Text, Dimensions, Image, ScrollView, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, TouchableOpacity, StatusBar } from 'react-native';
 import user from '../../../images/user.png'
 import deleteAccount from '../../../images/deleteAccount.png'
 import logout from '../../../images/logout.png'
@@ -25,7 +25,8 @@ const Profile = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <KeyboardAvoidingView className='flex-1 bg-black'>
+            <StatusBar barStyle={'light-content'} />
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView
                     contentContainerStyle={{ flexGrow: 1 }}

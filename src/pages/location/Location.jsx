@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Alert, Platform, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Alert, Platform, ScrollView, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, StatusBar } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import { check, request, PERMISSIONS, RESULTS, openSettings } from 'react-native-permissions';
 import location from '../../../images/location.png';
@@ -58,9 +58,10 @@ const Location = ({ navigation }) => {
         }
     };
     return (
-        <KeyboardAvoidingView className='flex-1 bg-black' style={{paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right}}>
+        <KeyboardAvoidingView className='flex-1 bg-black'>
+            <StatusBar barStyle={'dark-content'} />
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View className='flex-1 bg-[#F6F6F6]'>
+                <View className='flex-1 bg-[#F6F6F6]' style={{ paddingBottom: insets.bottom, paddingTop: insets.top }}>
                     <View className='h-[15%] justify-end items-center'>
                         <AuthProgressBar
                             progress={'w-4/5'} />
