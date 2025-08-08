@@ -141,6 +141,20 @@ const MainTab = () => {
           }} /> */}
       </Tab.Navigator>
     </View>
+    // <Tab.Navigator
+    //   screenOptions={{
+    //     headerShown: false,
+    //     animation: 'shift',
+    //   }}>
+    //   <Tab.Screen name="Home" component={Home} options={{
+    //     tabBarStyle: {
+    //       position: 'absolute',
+    //       marginBottom: insets.bottom,
+    //     }
+    //   }} />
+    //   <Tab.Screen name="Schedules" component={Schedules} />
+    //   <Tab.Screen name="Notifications" component={Notifications} />
+    // </Tab.Navigator>
   );
 };
 export default MainTab;
