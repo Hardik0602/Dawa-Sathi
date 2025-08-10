@@ -156,5 +156,97 @@ const MainTab = () => {
     //   <Tab.Screen name="Notifications" component={Notifications} />
     // </Tab.Navigator>
   );
+  // return (
+  //   <Tab.Navigator
+  //     screenOptions={{
+  //       headerShown: false,
+  //       animation: 'shift'
+  //     }}
+  //     options={{
+  //       tabBarItemStyle: {
+  //         justifyContent: 'center',
+  //         alignItems: 'center',
+  //       },
+  //       tabBarLabelStyle: {
+  //         marginTop: 0
+  //       },
+  //       tabBarIconStyle: {
+  //         marginTop: 0
+  //       }
+  //     }}>
+  //     <Tab.Screen
+  //       name='Home'
+  //       component={Home}
+  //       options={{
+  //         tabBarStyle: {
+  //           backgroundColor: 'white',
+  //           width: '80%',
+  //           marginLeft: '10%',
+  //           position: 'absolute',
+  //           borderRadius: 30,
+  //           bottom: '3%',
+  //           shadowColor: '#A532E9'
+  //         },
+  //         tabBarIcon: ({ focused }) => (
+  //           <Image
+  //             source={home_icon}
+  //             style={{
+  //               width: 100,
+  //               aspectRatio: 1,
+  //               tintColor: focused ? '#A532E9' : 'black'
+  //             }} />
+  //         ),
+  //         tabBarLabel: () => null
+  //       }} />
+  //     <Tab.Screen
+  //       name='Schedules'
+  //       component={Schedules}
+  //       options={{
+  //         tabBarStyle: {
+  //           backgroundColor: '#A531E9',
+  //           width: '80%',
+  //           marginLeft: '10%',
+  //           position: 'absolute',
+  //           borderRadius: 30,
+  //           bottom: '3%',
+  //           shadowColor: 'white'
+  //         },
+  //         tabBarIcon: ({ focused }) => (
+  //           <Image
+  //             source={schedule_icon}
+  //             style={{
+  //               width: 100,
+  //               aspectRatio: 1,
+  //               tintColor: focused ? 'white' : 'black'
+  //             }} />
+  //         ),
+  //         tabBarLabel: () => null
+  //       }} />
+  //     <Tab.Screen
+  //       name='Notifications'
+  //       component={Notifications}
+  //       options={{
+  //         tabBarStyle: {
+  //           backgroundColor: '#A531E9',
+  //           width: '80%',
+  //           marginLeft: '10%',
+  //           position: 'absolute',
+  //           borderRadius: 30,
+  //           bottom: '3%',
+  //           shadowColor: 'white'
+  //         },
+  //         tabBarIcon: ({ focused }) => (
+  //           <Image
+  //             source={notification_icon}
+  //             style={{
+  //               width: 100,
+  //               aspectRatio: 1,
+  //               tintColor: focused ? 'white' : 'black'
+  //             }} />
+  //         ),
+  //         tabBarLabel: () => null
+  //       }} />
+  //   </Tab.Navigator>
+  // );
 };
 export default MainTab;
