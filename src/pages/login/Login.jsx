@@ -22,16 +22,16 @@ const Login = ({ navigation }) => {
   }, [verified]);
   return (
     <KeyboardAvoidingView className='flex-1 bg-black'>
-      <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'}/>
+      <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'} />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View className='flex-1 bg-[#A531E9]' style={{paddingTop:insets.top}}>
+        <View className='flex-1 bg-[#A531E9]' style={{ paddingTop: insets.top }}>
           <View className='h-[40%] items-center justify-center'>
             <Image
               source={log}
               resizeMode='contain'
               className='h-[80%] w-[60%]' />
           </View>
-          <View className='h-[60%] bg-white rounded-t-[10%] p-[5%]' style={{paddingBottom:insets.bottom}}>
+          <View className='h-[60%] bg-white rounded-t-[10%] p-[5%]' style={{ paddingBottom: insets.bottom }}>
             <ScrollView
               contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-evenly' }}
               keyboardShouldPersistTaps="handled"
