@@ -89,18 +89,18 @@ const OTP = ({ navigation, route }) => {
               </TouchableOpacity>
             </View>
             <View className='h-[8%] items-center'>
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-[60%] h-full`}
                 disabled={disable}
                 onPress={() => { navigation.replace('Name') }}>
                 <Text className='text-white font-bold text-[20px]'>Continue</Text>
-              </TouchableOpacity> */}
-              <TouchableOpacity
+              </TouchableOpacity>
+              {/* <TouchableOpacity
                 className={`${disable ? 'bg-gray-500' : 'bg-[#AB33ED]'} rounded-xl items-center justify-center w-[60%] h-full`}
                 disabled={disable}
                 onPress={() => onPress()}>
                 <Text className='text-white font-bold text-[20px]'>Continue</Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
           </ScrollView>
         </View>
