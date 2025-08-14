@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView, StatusBar } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import VerifyOtpHook from '../../hooks/VerifyOtpHook';
 const Number = ({ number }) => (
@@ -69,8 +69,9 @@ const OTP = ({ navigation, route }) => {
     verified ? navigation.navigate('Name') : null;
   }, [verified]);
   return (
-    <KeyboardAvoidingView className='flex-1 bg-black' style={{ paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <KeyboardAvoidingView className='flex-1 bg-black'>
+      <StatusBar translucent backgroundColor='transparent' barStyle="dark-content" />
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
         <View className='flex-1 bg-white'>
           <ScrollView
             contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-evenly' }}
