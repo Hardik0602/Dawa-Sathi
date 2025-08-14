@@ -19,11 +19,10 @@ const MainTab = () => {
           marginHorizontal: 50,
           borderRadius: 25,
           height: 60,
-          paddingHorizontal: 15,
-          shadowColor: 'black',
-          shadowOffset: { width: 0, height: 10 },
-          shadowRadius: 10,
-          shadowOpacity: 0.1,
+          shadowColor: route.name === 'Home' ? '#A532E9' : '#FFFFFF',
+          // shadowOffset: { width: 0, height: 10 },
+          // shadowRadius: 10,
+          // shadowOpacity: 0.1,
           backgroundColor: route.name === 'Home' ? '#FFFFFF' : '#A532E9',
         },
         tabBarShowLabel: false,
@@ -35,7 +34,7 @@ const MainTab = () => {
           return (
             <Image
               source={icon}
-              className="w-10 h-10"
+              className="w-[50px] h-[50px] mt-[15px]"
               style={{
                 tintColor: focused
                   ? route.name === 'Home'
