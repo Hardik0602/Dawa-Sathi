@@ -45,6 +45,16 @@ npx react-native bundle \
   --assets-dest android/app/src/main/res
 ```
 
+```bash
+cd ..
+node node_modules/react-native/cli.js bundle \
+  --platform android \
+  --dev false \
+  --entry-file index.js \
+  --bundle-output android/app/src/main/assets/index.android.bundle \
+  --assets-dest android/app/src/main/res
+```
+
 ### Step 3: Build APK
 
 **Option 1: Using Android Studio**
