@@ -46,7 +46,6 @@ npx react-native bundle \
 ```
 
 ```bash
-cd ..
 node node_modules/react-native/cli.js bundle \
   --platform android \
   --dev false \
