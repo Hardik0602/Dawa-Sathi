@@ -12,7 +12,7 @@ const Startup = ({ navigation }) => {
     }, []);
     return (
         <View className='flex-1 items-center justify-center'>
-            <StatusBar barStyle={'dark-content'} />
+            <StatusBar translucent backgroundColor='transparent' barStyle={'dark-content'} />
             <Image
                 source={logo}
                 resizeMode='contain'
