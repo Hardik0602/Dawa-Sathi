@@ -18,7 +18,14 @@ A React Native-based mobile app designed to help elderly people keep track of th
 
 ## Screenshots
 
-<img src="src/images/app_screenshot.png" alt="DawaSathi App UI" width="300"/>
+### Home Screen
+<img src="./images/app_home_screenshot.png" alt="DawaSathi App UI" width="300"/>
+
+### Schedules Screen
+<img src="./images/app_schedules_screenshot.png" alt="DawaSathi App UI" width="300"/>
+
+### Notification Screen
+<img src="./images/app_notification_screenshot.png" alt="DawaSathi App UI" width="300"/>
 
 ## Tech Stack
 
