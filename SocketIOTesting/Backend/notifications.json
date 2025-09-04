@@ -1,0 +1,14 @@
+{
+  "notifications": [
+    {
+      "title": "ALERT !",
+      "message": "Dose not taken yet.",
+      "title_color": "#FF0000"
+    },
+    {
+      "title": "Hey User !",
+      "message": "Late dose taken at 9:25 AM.",
+      "title_color": "#222222"
+    }
+  ]
+}
